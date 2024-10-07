@@ -3,78 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact_page</title>
+    <title>Contact Page</title>
     <link rel="stylesheet" href="css/style.production.css" />
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
 
   <body>
-    <header class="flex space-between align-center p-2 mb-5">
-      <div><img src="img/pixelart.jpg" width="200" /></div>
+    <header class="header-container">
       <div>
-        <nav class="navigation self-right" role="menubar">
-          <a href="index.html" role="menuitem"
-            class="navigation_list_item">Home</a>
-          <a href="about.html" role="menuitem" class="navigation_list_item">My
-            about page</a>
-          <a href="work.html" role="menuitem"
-            class="navigation_list_item">Work</a>
-          <a href="contact.html" role="menuitem"
-            class="navigation_list_item">Contact</a>
-        </nav>
+        <img
+          src="img/pixelart.jpg"
+          class="header-logo"
+          width="200"
+          alt="Pixel Art"
+        />
       </div>
+      <nav class="navbar" role="navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
     </header>
-    <main class="container w-80">
-      <form action method="post" id="contact-form">
-        <div class="mb-1">
-          <label for="email">Email:</label>
-          <input id="email" name="email" type="email" required />
+
+    <main class="contact-page-container">
+      <div class="contact-info-container">
+        <div class="contact-box">
+          <h2 class="contact-heading">Address</h2>
+          <p class="contact-address">c/o Summerlin Enterprise</p>
+          <p class="contact-address">777 Star Street, Las Vegas, NV 89074</p>
         </div>
-        <div class="mb-1">
-          <label for="telephone">Telephone:</label>
-          <input
-            id="telephone"
-            name="telephone"
-            type="tel"
-            pattern="\d{3}[\-]\d{3}[\-]\d{4}"
-            required />
+        <div class="contact-box">
+          <h2 class="contact-heading">Phone</h2>
+          <a class="contact-phone" href="tel:7029275771">tel:+1 702 927 5771</a>
         </div>
-        <div class="mb-1">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
+        <div class="contact-box">
+          <h2 class="contact-heading">Email</h2>
+          <a class="contact-email" href="mailto:Summerlin@yahoo.com"
+            >Email: Summerlin@yahoo.com</a
+          >
         </div>
-        <div>
-          <input type="submit" value="Send message" />
-        </div>
-      </form>
-      <br>
-      <div class="contact_tab">
-        <h1 class="c1">Contact Us</h1>
-        <p class="c2">c/o Summerlin Enterprise</p>
-        <p class="c2">777 Star Street</p>
-        <p class="c2">Las Vegas, NV 89074</p>
-        <br />
-        <a class="c3" href="tel:7029275771">tel:+1 702 927 5771</a>
-        <br />
-        <a class="c3" href="mailto:Summerlin@yahoo.com">Email:
-          Summerlin@yahoo.com</a>
       </div>
-      <br />
+
+      <div class="form-box">
+        <form action method="post" id="contact-form">
+          <div class="form-group">
+            <label for="email" class="form-label">Email:</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="form-input"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="telephone" class="form-label">Telephone:</label>
+            <input
+              id="telephone"
+              name="telephone"
+              type="tel"
+              class="form-input"
+              pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-textarea"
+              required
+            ></textarea>
+          </div>
+          <div class="form-submit">
+            <input type="submit" class="submit-btn" value="Send message" />
+          </div>
+        </form>
+      </div>
     </main>
-    <footer class="center" role="contentinfo">
-      <div class="container w-20">
-        <p class="Footer_text">Find me on</p>
-        <div class="social_media center mb-3 mt-2">
-          <a class="s2" href="https://www.twitter.com/yourprofile" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a class="s2" href="https://www.instagram.com/yourprofile" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-      </div>
-    </footer>
     <script src="js/tota11y.min.js"></script>
   </body>
 </html>

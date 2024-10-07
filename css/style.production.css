@@ -1,374 +1,495 @@
-html,
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-}
-
+/* Global Styles */
 body {
-  background: rgb(135, 27, 208);
   background: linear-gradient(
     90deg,
     rgba(135, 27, 208, 1) 0%,
     rgba(193, 104, 162, 1) 60%
   );
-  font-family: sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 20px;
-  color: black;
-}
-
-a {
-  font-size: 30px;
-  color: black;
-}
-
-a:hover {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-a:visited {
-  color: green;
-}
-
-a:active {
-  color: yellow;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  color: white;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.align-center {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1; /* This ensures the main content expands to fill the available space */
+}
+
+/* index page */
+
+/* nav section */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Spreads the links across the entire width */
+  align-items: center;
+  width: 100%; /* Make sure the navbar takes the full width of the page */
+  padding: 0 20px; /* Add some padding on the left and right sides */
+  box-sizing: border-box; /* Ensure padding does not add to the width */
+}
+
+.nav-link {
+  font-size: 18px;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 15px; /* Add padding for a more clickable area */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Hover background color */
+  color: white; /* Change link color on hover */
+}
+
+/* top logo on page */
+.header-container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.navigation_list_item {
-  font-size: 20px;
-  padding: 3px;
-  margin-top: -30px;
-  position: relative;
+.header-logo {
+  width: 120px; /* Adjust the size here to make the image smaller */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensures proper scaling */
 }
 
-.space-between {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+.content-container {
+  display: flex;
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+  flex-direction: column; /* Stack elements vertically */
+  min-height: 50vh; /* Reduce the height to raise content */
+  padding-top: 20px; /* Add extra space at the top */
+  text-align: center; /* Centers the text */
 }
 
-.self-right {
-  -ms-flex-item-align: end;
-  align-self: flex-end;
+.logo-container {
+  display: flex;
+  flex-direction: column; /* Stack image, heading, and text vertically */
+  align-items: center; /* Horizontally center all elements */
+  gap: 20px; /* Space between the image, text, and link */
 }
 
-.m-1 {
-  margin: 1rem;
-}
-
-.mt-2 {
-  margin-top: 2rem;
-}
-
-.mb-1 {
-  margin-bottom: 1rem;
-}
-
-.mb-3 {
-  margin-bottom: -1rem;
-}
-
-.mb-5 {
-  margin-bottom: 5rem;
-}
-
-.w-20 {
-  width: 20%;
-}
-
-.w-50 {
-  width: 50%;
-}
-
-.w-80 {
-  width: 80%;
-}
-
-.center {
-  text-align: center;
-}
-
-.container {
-  margin: 0 auto;
-}
-
-.rounded {
-  width: 35%;
-  height: 35%;
+.logo {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-.profile_link {
-  font-size: 20px;
-  padding: 10px;
-}
-
-.intro {
-  padding: 10px;
-}
-
-.intro_container {
-  text-align: left;
-  padding: 10px;
-}
-
-.navigation a {
-  margin-left: 1rem;
-}
-
-.s2 {
-  padding: 1px;
-}
-
-.header-1 {
-  font-size: 40px;
-  padding: 10px;
-  margin-right: -2px;
-  margin-left: -2px;
-}
-
-.header-2 {
-  font-size: 40px;
-  padding: 10px;
-  margin-right: -2px;
-  margin-left: -2px;
+.intro-text {
   text-align: center;
 }
 
-.about_p {
-  text-align: center;
-}
-
-.about_list {
-  text-align: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 40px;
-  margin-top: 40px;
-}
-
-.table_list {
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-th {
-  border: 1px solid black;
-  padding: 5px;
-}
-
-td {
-  border: 1px solid black;
-  padding: 5px;
-}
-
-.button-container {
-  text-align: center;
-  padding: 20px;
-}
-
-.button {
-  background-color: purple;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 1s;
-}
-
-.button:hover {
-  background-color: plum;
-}
-
-.Footer_text {
-  margin-bottom: -20px;
-}
-
-.work {
-  text-align: center;
-  margin: 25px;
-}
-.grid {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid_item {
-  background-color: rgba(135, 27, 208, 1) 0%;
-  border: 4px solid black;
-}
-
-form {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-form div {
+.intro-heading {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-label {
+.intro-link {
+  display: inline-block;
+  background-color: rgba(135, 27, 208, 1);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 1s ease;
+}
+
+.intro-link:hover {
+  background-color: rgba(81, 16, 124, 1);
+}
+
+/* Index page ^^ */
+
+/* Contact section */
+
+.contact-info-container {
+  display: flex;
+  justify-content: space-between; /* Spreads the boxes evenly across the container */
+  align-items: stretch; /* Ensures all boxes have the same height */
+  padding: 20px;
+  gap: 20px; /* Adds space between each box */
+  max-width: 1200px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Centers the container horizontally */
+  width: 100%; /* Ensures the container stretches to the full available width */
+}
+
+/* Individual contact info boxes */
+.contact-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%; /* Makes each box take up roughly one-third of the container */
+  display: flex;
+  flex-direction: column; /* Allows content inside the box to align properly */
+  justify-content: center; /* Centers content vertically */
+  text-align: center; /* Centers the text inside each box */
+}
+
+.contact-box {
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for each box */
+  width: 30%; /* Ensures each box takes up roughly one-third of the container */
+  text-align: center; /* Centers the text within the box */
+}
+
+/* Box around the form fields */
+.form-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 60px; /* Increased padding for a more balanced look */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 72%; /* Takes up 90% of the viewport width */
+  max-width: 1200px; /* Ensures the form box doesn't get too wide */
+  margin: 0 auto; /* Centers the form box */
+  margin-bottom: 30px; /* Space below the form */
+}
+
+/* Apply the provided form styles */
+.contact-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 0.5em; /* Larger spacing between form elements */
+}
+
+.form-label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+  color: black;
 }
 
-input {
+.form-input,
+.form-textarea {
+  width: 100%; /* Ensures all form fields take the full width inside the form box */
+  padding: 15px; /* Add padding for consistent spacing inside the fields */
+  border: 1px solid #ccc; /* Consistent border for all form elements */
+  border-radius: 6px; /* Rounded corners for form fields */
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 10px;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+  margin-bottom: 20px; /* Space between form elements */
+}
+
+.form-textarea {
+  height: 150px; /* Adjust height as needed */
+  resize: vertical; /* Allow the user to resize the text area vertically */
+}
+
+/* Submit button styling */
+.submit-btn {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
-textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
-input[type="submit"] {
-  background-color: plum;
+  background-color: rgba(135, 27, 208, 1);
   color: black;
   border: none;
-  padding: 1rem;
+  padding: 15px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
-  background-color: hsl(300, 47%, 60%);
+.submit-btn:hover {
+  background-color: rgba(193, 104, 162, 1);
 }
 
-.contact_tab {
+/* Contact info styling */
+.contact-info {
+  text-align: center;
+  color: black;
+  margin-top: -25px;
+}
+
+.contact-heading {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.contact-address,
+.contact-phone,
+.contact-email {
+  font-size: 1.1rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.contact-phone:hover,
+.contact-email:hover {
+  color: lightblue;
+  text-decoration: underline;
+}
+
+/* contact section ^^ */
+
+/* Work page section */
+
+.work-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.c1 {
-  padding: 10px;
-  font-size: 45px;
-}
-.c2 {
-  padding: 10px;
-  font-size: 22px;
+.work-heading {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: white;
 }
 
-.c3 {
-  font-size: 17px;
+/* Grid layout for work items - 2 columns side by side */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 30px; /* Space between the items */
 }
 
-@media (max-width: 768px) {
-  .grid {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-  }
+/* Individual work items styling */
+.work-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* SVG and Animations */
-svg * {
-  transform-box: fill-box;
+.work-item:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.sun {
-  -webkit-animation: color-change 4s linear infinite alternate;
-  animation: color-change 4s linear infinite alternate;
+.work-item h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.cloud-back,
-.cloud-front {
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
+.work-item p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
 }
 
-.cloud-back {
-  -webkit-animation: cloud-move 25s linear infinite alternate;
-  animation: cloud-move 25s linear infinite alternate;
+.work-item a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #3b82f6;
+  transition: color 0.3s;
 }
 
-.cloud-front {
-  -webkit-animation: cloud-move 30s linear infinite alternate;
-  animation: cloud-move 30s linear infinite alternate;
+.work-item a:hover {
+  color: #1d4ed8;
 }
 
-/* Keyframe Section */
-@-webkit-keyframes color-change {
+/* Work section ^^*/
+
+/* About Page */
+
+/* Container for about content */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px 5px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Page heading */
+.page-heading {
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* About text paragraph */
+.about-text {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/* About list styling */
+.about-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about-list li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.about-list li:hover {
+  background-color: rgba(135, 27, 208, 0.8);
+  color: #fff;
+}
+
+/* Skills table styling */
+.skills-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto; /* Reduced margin to move content higher */
+  border-collapse: collapse;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skills-table th,
+.skills-table td {
+  padding: 15px;
+  border: 1px solid black;
+  text-align: left;
+  background: linear-gradient(
+    90deg,
+    rgba(135, 27, 208, 1) 0%,
+    rgba(193, 104, 162, 1) 60%
+  );
+}
+
+.skills-table th {
+  background-color: rgba(135, 27, 208, 1);
+  color: black;
+  font-weight: bold;
+}
+
+.skills-table td {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+/* CV download button */
+.cv-button-container {
+  margin-top: 30px; /* Reduced top margin for button */
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(
+    90deg,
+    rgba(135, 27, 208, 1) 0%,
+    rgba(193, 104, 162, 1) 60%,
+    rgba(255, 200, 124, 1) 100%
+  );
+  color: black;
+  text-decoration: none;
+  border-radius: 50px; /* Rounded pill shape */
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.download-btn:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(193, 104, 162, 1) 0%,
+    rgba(255, 200, 124, 1) 60%,
+    rgba(135, 27, 208, 1) 100%
+  );
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Larger shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.download-btn:active {
+  transform: scale(0.98); /* Slight shrink on click */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
+
+/* Adjust the size of the SVG without affecting the rest of the page */
+.berlin-illustration {
+  width: 80%; /* Set the width relative to the container */
+  max-width: 500px; /* Set a maximum width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the SVG */
+  margin-top: 30px;
+}
+
+.cloud {
+  animation: moveClouds 8s infinite alternate ease-in-out;
+}
+
+@keyframes moveClouds {
   0% {
-    fill: #edc655;
+    transform: translateX(0);
   }
-
-  50% {
-    fill: #fcffad;
-  }
-
   100% {
-    fill: #f76414;
+    transform: translateX(50px); /* Moves the cloud 30px back and forth */
   }
 }
 
-@keyframes color-change {
-  0% {
-    fill: #edc655;
-  }
-
-  50% {
-    fill: #fcffad;
-  }
-
-  100% {
-    fill: #f76414;
-  }
+.cloud-2 {
+  animation-delay: 2s;
 }
 
-@-webkit-keyframes cloud-move {
-  from {
-    -webkit-transform: translate(0, 50px);
-    transform: translate(0, 50px);
-  }
+/* About page^^ */
 
-  to {
-    -webkit-transform: translate(200px, 50px);
-    transform: translate(200px, 50px);
-  }
+/* Footer Section */
+
+.footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
 }
 
-@keyframes cloud-move {
-  from {
-    -webkit-transform: translate(0, 50px);
-    transform: translate(0, 50px);
-  }
+/* Social container styling */
+.social-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  to {
-    -webkit-transform: translate(200px, 50px);
-    transform: translate(200px, 50px);
-  }
+.social-container p {
+  margin-bottom: 5px; /* Reduced space between text and icons */
+}
+
+/* Social media icon styling */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Slightly reduced space between the icons */
+}
+
+.social-media a {
+  color: white;
+  font-size: 20px; /* Reduced icon size */
+  transition: color 0.3s;
+}
+
+.social-media a:hover {
+  color: lightblue;
 }
